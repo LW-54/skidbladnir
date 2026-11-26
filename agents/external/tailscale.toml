@@ -1,0 +1,7 @@
+id = "ext-tailscale"
+description = "External platform stub: Tailscale coordination plane (Personal Free, GitOps policy.json)."
+attributes = ["role:external-platform"]
+
+[offer."ext:service".tailscale-control]
+tags = ["mesh-control"]
+plan = "personal-free"

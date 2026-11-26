@@ -1,0 +1,34 @@
+id = "x240"
+description = "Roaming LUKS2+TPM2-PIN ThinkPad workstation Superagent (canary host for M1-Sunset cutover)."
+attributes = ["auth:principal", "role:workstation", "role:mesh-member", "posture:roaming", "env:dev"]
+profiles = ["base-workstation"]
+contains = [
+  "hw-x240",
+  "backup-restic",
+  "cache-harmonia-dev",
+]
+
+[internal.offer]
+ram = 16384
+
+[internal.offer."config:hostname"]
+value = "x240"
+
+[internal.offer."config:primary-user"]
+name = "lw"
+
+[use."ext:service"."mesh:control"]
+tags = ["mesh-control"]
+selector = "mesh-control"
+
+[use."ext:service"."cache:cdn"]
+tags = ["cdn-read"]
+selector = "cdn-read"
+
+[use."ext:service"."backup:offhost"]
+tags = ["offhost-backup"]
+selector = "offhost-backup"
+
+[use."mesh:service".obs-ingest]
+tags = ["zone:mesh", "obs-ingest"]
+selector = "obs-ingest"

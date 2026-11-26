@@ -1,0 +1,9 @@
+id = "obs-mcp"
+description = "Attenuated read-only Biscuit MCP observability token (permitted for AI agents)."
+posture = "online"
+ttl_seconds = 1800
+
+[[provides]]
+kind = "env"
+name = "VERFT_MCP_BISCUIT"
+env_from = "SKIDBLADNIR_OBS_BISCUIT"

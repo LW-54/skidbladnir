@@ -1,0 +1,7 @@
+id = "ext-codeberg"
+description = "External platform stub: Codeberg async Git mirror (3-2-1-1-0 break-glass resilience)."
+attributes = ["role:external-platform"]
+
+[offer."ext:service".codeberg-mirror]
+tags = ["git-mirror", "breakglass"]
+repo = "codeberg:LW-54/skidbladnir"

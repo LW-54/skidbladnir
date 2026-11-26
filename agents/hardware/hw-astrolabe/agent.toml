@@ -1,0 +1,7 @@
+id = "hw-astrolabe"
+description = "Bespoke L3 VPS hardware profile for astrolabe (QEMU guest profile + zram swap, sealed foreign:nixos-module)."
+attributes = ["role:hardware", "foreign:nixos-module"]
+
+[offer."hw:profile".astrolabe-vps]
+vendor = "qemu-kvm"
+zram_swap = true

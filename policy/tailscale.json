@@ -1,0 +1,105 @@
+{
+  "tagOwners": {
+    "tag:actor-gha-ci": [
+      "autogroup:admin"
+    ],
+    "tag:astrolabe": [
+      "autogroup:admin"
+    ],
+    "tag:cache": [
+      "autogroup:admin"
+    ],
+    "tag:nats": [
+      "autogroup:admin"
+    ],
+    "tag:obs": [
+      "autogroup:admin"
+    ],
+    "tag:rpi": [
+      "autogroup:admin"
+    ],
+    "tag:tuf": [
+      "autogroup:admin"
+    ],
+    "tag:wsl": [
+      "autogroup:admin"
+    ],
+    "tag:x240": [
+      "autogroup:admin"
+    ]
+  },
+  "acls": [
+    {
+      "action": "accept",
+      "src": [
+        "autogroup:admin"
+      ],
+      "dst": [
+        "*:*"
+      ]
+    },
+    {
+      "action": "accept",
+      "src": [
+        "tag:actor-gha-ci",
+        "tag:astrolabe",
+        "tag:rpi",
+        "tag:tuf",
+        "tag:wsl",
+        "tag:x240"
+      ],
+      "dst": [
+        "tag:cache:5751"
+      ]
+    },
+    {
+      "action": "accept",
+      "src": [
+        "tag:astrolabe",
+        "tag:rpi",
+        "tag:tuf",
+        "tag:wsl",
+        "tag:x240"
+      ],
+      "dst": [
+        "tag:nats:4222"
+      ]
+    },
+    {
+      "action": "accept",
+      "src": [
+        "tag:astrolabe",
+        "tag:rpi",
+        "tag:tuf",
+        "tag:wsl",
+        "tag:x240"
+      ],
+      "dst": [
+        "tag:obs:9428"
+      ]
+    }
+  ],
+  "ssh": [
+    {
+      "action": "check",
+      "src": [
+        "autogroup:admin"
+      ],
+      "dst": [
+        "autogroup:self",
+        "tag:actor-gha-ci",
+        "tag:astrolabe",
+        "tag:cache",
+        "tag:nats",
+        "tag:obs",
+        "tag:rpi",
+        "tag:tuf",
+        "tag:wsl",
+        "tag:x240"
+      ],
+      "users": [
+        "autogroup:nonroot"
+      ]
+    }
+  ]
+}

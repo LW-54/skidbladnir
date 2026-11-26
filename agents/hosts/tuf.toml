@@ -1,0 +1,32 @@
+id = "tuf"
+description = "AC lid-closed opportunistic compute-donor laptop Superagent (Soft conditional NATS JetStream worker)."
+attributes = ["auth:principal", "role:workstation", "role:compute-worker", "role:mesh-member", "posture:roaming", "env:dev"]
+profiles = ["base-workstation"]
+contains = [
+  "compute-nats-worker",
+]
+
+[internal.offer]
+ram = 16384
+
+[internal.offer."config:hostname"]
+value = "tuf"
+
+[internal.offer."config:primary-user"]
+name = "lw"
+
+[use."ext:service"."mesh:control"]
+tags = ["mesh-control"]
+selector = "mesh-control"
+
+[use."ext:service"."cache:cdn"]
+tags = ["cdn-read"]
+selector = "cdn-read"
+
+[use."mesh:service".obs-ingest]
+tags = ["zone:mesh", "obs-ingest"]
+selector = "obs-ingest"
+
+[use."mesh:service".nats-broker]
+tags = ["zone:mesh", "nats-broker"]
+selector = "nats-broker"

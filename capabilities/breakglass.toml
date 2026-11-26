@@ -1,0 +1,13 @@
+id = "breakglass"
+description = "Air-gapped offline break-glass recovery capability (offline-only, conflicts with online-admin)."
+posture = "offline"
+requires = ["sops-root"]
+conflicts = ["github-cli", "r2-admin"]
+ttl_seconds = 1800
+ssh_agent = true
+
+[[provides]]
+kind = "ram_file"
+name = "VERFT_BREAKGLASS_NOTE"
+filename = "breakglass.txt"
+static_value = "offline-breakglass-session"

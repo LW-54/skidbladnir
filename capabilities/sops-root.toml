@@ -1,0 +1,10 @@
+id = "sops-root"
+description = "Mount SOPS root age key into private CLONE_NEWNS RAM tmpfs (0600, TTL 900s)."
+posture = "any"
+ttl_seconds = 900
+
+[[provides]]
+kind = "ram_file"
+name = "SOPS_AGE_KEY_FILE"
+filename = "sops-age.key"
+env_from = "SKIDBLADNIR_SOPS_AGE_KEY"

@@ -1,0 +1,65 @@
+id = "astrolabe"
+description = "Production impermanent x86_64 VPS composing Ivaldi base-server + web/obs/cache/compute stacks + hw-astrolabe."
+attributes = ["auth:principal", "role:server", "role:mesh-member", "env:prod"]
+profiles = ["base-server"]
+contains = [
+  "hw-astrolabe",
+  "caddy-public",
+  "caddy-mesh",
+  "vaultwarden",
+  "auth-stack",
+  "notify-ntfy",
+  "cache-niks3",
+  "compute-nats-hub",
+  "sync-git-annex",
+  "obs-hub",
+  "docs-mdbook",
+]
+
+[internal.offer]
+ram = 11264
+
+[internal.offer."config:hostname"]
+value = "astrolabe"
+
+[internal.offer."config:domain"]
+value = "adje.app"
+
+[internal.offer."config:tailnet"]
+value = "astrolabe.tailnet.ts.net"
+
+[internal.offer."config:primary-user"]
+name = "lw"
+
+[offer]
+"https:ingress" = true
+
+[offer."mesh:service".obs-ingest]
+tags = ["zone:mesh", "obs-ingest"]
+host = "obs.astrolabe.tailnet.ts.net"
+port = 9428
+
+[offer."mesh:service".nats-broker]
+tags = ["zone:mesh", "nats-broker"]
+host = "astrolabe.tailnet.ts.net"
+port = 4222
+
+[offer."mesh:service".niks3-upload]
+tags = ["zone:mesh", "niks3-upload"]
+url = "https://niks3.astrolabe.tailnet.ts.net"
+
+[use."ext:service"."mesh:control"]
+tags = ["mesh-control"]
+selector = "mesh-control"
+
+[use."ext:service"."cache:cdn"]
+tags = ["cdn-read"]
+selector = "cdn-read"
+
+[use."ext:service"."backup:offhost"]
+tags = ["offhost-backup"]
+selector = "offhost-backup"
+
+[use."ext:service"."archive:parquet"]
+tags = ["parquet-archive"]
+selector = "parquet-archive"

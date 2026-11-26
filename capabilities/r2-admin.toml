@@ -1,0 +1,10 @@
+id = "r2-admin"
+description = "Short-lived Cloudflare R2 bucket admin token (online-only)."
+posture = "online"
+conflicts = ["breakglass"]
+ttl_seconds = 900
+
+[[provides]]
+kind = "env"
+name = "CLOUDFLARE_API_TOKEN"
+env_from = "SKIDBLADNIR_R2_TOKEN"

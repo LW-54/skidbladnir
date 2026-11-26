@@ -1,0 +1,11 @@
+id = "github-cli"
+description = "Short-lived GitHub admin capability + scoped PR_SET_PDEATHSIG ssh-agent (online-only)."
+posture = "online"
+conflicts = ["breakglass"]
+ttl_seconds = 1800
+ssh_agent = true
+
+[[provides]]
+kind = "env"
+name = "GH_TOKEN"
+env_from = "SKIDBLADNIR_GH_TOKEN"

@@ -1,0 +1,13 @@
+id = "live-iso"
+description = "Ephemeral rescue & onboarding Live-ISO — zero prod secrets, zero mesh access."
+attributes = ["auth:principal", "role:rescue", "posture:ephemeral"]
+contains = [
+  "target-nixos-iso",
+  "git",
+]
+
+[internal.offer]
+ram = 2048
+
+[internal.offer."config:hostname"]
+value = "live-iso"

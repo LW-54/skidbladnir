@@ -1,0 +1,13 @@
+# Skidbladnir L3 Schema Overlay extending Ivaldi's strict ERG-L2 promise registry
+# without modifying upstream L2 (demonstrating multi-root schema merging!).
+
+[promises."hw:profile"]
+description = "Host-specific physical/virtual hardware tuning profile (QEMU guest, Intel microcode, kernel modules)"
+cardinality = "broadcast"
+keyed = true
+default_offer_mandatory = false
+default_use_mandatory = false
+
+[promises."hw:profile".payload]
+vendor = { type = "string", required = true, description = "Hardware vendor or hypervisor family" }
+zram_swap = { type = "boolean", required = false, description = "Whether zram swap is enabled" }

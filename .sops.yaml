@@ -1,0 +1,44 @@
+# Generated deterministically by `ivaldi-emit-sops` from `baugr project read-secret --json`.
+# Do not edit manually; regenerate from Cedar policies.
+creation_rules:
+  - path_regex: ^secrets/recovery\.sops\.yaml$
+    key_groups:
+      - age:
+          - age1yph7kqs5wq2hf4edt2f648en0unpjak7nps9u5v8r43ev9fvsewsmuahjk
+  - path_regex: ^secrets/authelia-session\.sops\.yaml$
+    key_groups:
+      - age:
+          - age173rv8hnu7sa66u8583hyp0pjuwzjxsfepr4cmtxzeklazpq5la9szp35hk
+          - age1yph7kqs5wq2hf4edt2f648en0unpjak7nps9u5v8r43ev9fvsewsmuahjk
+  - path_regex: ^secrets/lldap-jwt\.sops\.yaml$
+    key_groups:
+      - age:
+          - age173rv8hnu7sa66u8583hyp0pjuwzjxsfepr4cmtxzeklazpq5la9szp35hk
+          - age1yph7kqs5wq2hf4edt2f648en0unpjak7nps9u5v8r43ev9fvsewsmuahjk
+  - path_regex: ^secrets/r2-cache-write\.sops\.yaml$
+    key_groups:
+      - age:
+          - age173rv8hnu7sa66u8583hyp0pjuwzjxsfepr4cmtxzeklazpq5la9szp35hk
+          - age1yph7kqs5wq2hf4edt2f648en0unpjak7nps9u5v8r43ev9fvsewsmuahjk
+  - path_regex: ^secrets/restic-repo\.sops\.yaml$
+    key_groups:
+      - age:
+          - age14fnlmar7dt4nzu3dayql669mavuvd5epn0vrplg76jwpesq3dvnqr6d9zy
+          - age173rv8hnu7sa66u8583hyp0pjuwzjxsfepr4cmtxzeklazpq5la9szp35hk
+          - age1placeholder0tuf0000000000000000000000000000000000000000000
+          - age1placeholder0wsl0000000000000000000000000000000000000000000
+          - age1yph7kqs5wq2hf4edt2f648en0unpjak7nps9u5v8r43ev9fvsewsmuahjk
+  - path_regex: ^secrets/tailscale-auth\.sops\.yaml$
+    key_groups:
+      - age:
+          - age14fnlmar7dt4nzu3dayql669mavuvd5epn0vrplg76jwpesq3dvnqr6d9zy
+          - age173rv8hnu7sa66u8583hyp0pjuwzjxsfepr4cmtxzeklazpq5la9szp35hk
+          - age1placeholder0rpi0000000000000000000000000000000000000000000
+          - age1placeholder0tuf0000000000000000000000000000000000000000000
+          - age1placeholder0wsl0000000000000000000000000000000000000000000
+          - age1yph7kqs5wq2hf4edt2f648en0unpjak7nps9u5v8r43ev9fvsewsmuahjk
+  - path_regex: ^secrets/vaultwarden-master\.sops\.yaml$
+    key_groups:
+      - age:
+          - age173rv8hnu7sa66u8583hyp0pjuwzjxsfepr4cmtxzeklazpq5la9szp35hk
+          - age1yph7kqs5wq2hf4edt2f648en0unpjak7nps9u5v8r43ev9fvsewsmuahjk

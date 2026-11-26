@@ -1,0 +1,7 @@
+id = "cap-ai-session"
+description = "Attenuated AI diagnostic session (`verft cap run obs-mcp`) — Cedar L3+ blocks all root/admin/breakglass caps."
+attributes = ["auth:principal", "actor:ai-agent", "role:session", "mode:online"]
+contains = [
+  "cap-runtime",
+  "cap-obs-mcp",
+]

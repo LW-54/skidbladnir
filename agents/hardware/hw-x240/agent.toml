@@ -1,0 +1,7 @@
+id = "hw-x240"
+description = "Bespoke L3 ThinkPad X240 hardware profile (initrd storage modules, Intel microcode, zram swap)."
+attributes = ["role:hardware"]
+
+[offer."hw:profile".thinkpad-x240]
+vendor = "lenovo-thinkpad-x240"
+zram_swap = true

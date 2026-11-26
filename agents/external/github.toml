@@ -1,0 +1,7 @@
+id = "ext-github"
+description = "External platform stub: GitHub LW-54/skidbladnir origin + free x86_64/arm64 Actions OIDC."
+attributes = ["role:external-platform"]
+
+[offer."ext:service".github-origin]
+tags = ["git-origin", "ci-oidc"]
+repo = "LW-54/skidbladnir"

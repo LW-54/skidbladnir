@@ -1,0 +1,61 @@
+{
+  "jetstream": true,
+  "authorization": {
+    "default_permissions": {
+      "publish": {
+        "deny": [
+          ">"
+        ]
+      },
+      "subscribe": {
+        "deny": [
+          ">"
+        ]
+      }
+    },
+    "users": [
+      {
+        "user": "astrolabe",
+        "claims": [
+          "nats-hub"
+        ],
+        "permissions": {
+          "publish": {
+            "allow": [
+              "$JS.>",
+              "jobs.>"
+            ]
+          },
+          "subscribe": {
+            "allow": [
+              "$JS.>",
+              "jobs.>"
+            ]
+          }
+        }
+      },
+      {
+        "user": "tuf",
+        "claims": [
+          "nats-worker"
+        ],
+        "permissions": {
+          "publish": {
+            "allow": [
+              "$JS.ACK.>",
+              "$JS.API.CONSUMER.MSG.NEXT.JOBS.>",
+              "jobs.ack.>",
+              "jobs.result.>"
+            ]
+          },
+          "subscribe": {
+            "allow": [
+              "_INBOX.>",
+              "jobs.work.>"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

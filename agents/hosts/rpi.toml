@@ -1,0 +1,30 @@
+id = "rpi"
+description = "Constrained aarch64 1 GiB Raspberry Pi edge Superagent (target-nixos-rpi + fs-simple-disk)."
+attributes = ["auth:principal", "role:edge", "role:mesh-member", "env:prod"]
+contains = [
+  "target-nixos-rpi",
+  "fs-simple-disk",
+  "trust-sops",
+  "mesh-tailscale",
+  "gitops-pull",
+  "obs-fluent-node",
+  "git",
+]
+
+[internal.offer]
+ram = 1024
+
+[internal.offer."config:hostname"]
+value = "rpi"
+
+[use."ext:service"."mesh:control"]
+tags = ["mesh-control"]
+selector = "mesh-control"
+
+[use."ext:service"."cache:cdn"]
+tags = ["cdn-read"]
+selector = "cdn-read"
+
+[use."mesh:service".obs-ingest]
+tags = ["zone:mesh", "obs-ingest"]
+selector = "obs-ingest"

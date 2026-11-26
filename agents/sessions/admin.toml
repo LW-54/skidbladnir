@@ -1,0 +1,9 @@
+id = "cap-admin-session"
+description = "Human online ephemeral session (`verft cap run --posture online sops-root github-cli r2-admin`)."
+attributes = ["auth:principal", "actor:human", "role:session", "mode:online"]
+contains = [
+  "cap-runtime",
+  "cap-sops-root",
+  "cap-github-cli",
+  "cap-r2-admin",
+]

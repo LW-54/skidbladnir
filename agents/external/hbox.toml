@@ -1,0 +1,7 @@
+id = "ext-hbox"
+description = "External platform stub: Hetzner Storage Box (SFTP Restic + lossless DuckDB Parquet + git-annex archive)."
+attributes = ["role:external-platform"]
+
+[offer."ext:service".hbox-sftp]
+tags = ["offhost-backup", "parquet-archive"]
+endpoint = "sftp://hbox"

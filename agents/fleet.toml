@@ -1,0 +1,19 @@
+id = "fleet"
+description = "Skidbladnir top-level Distributed System Superagent: 6 heterogeneous hosts + CI/AI actors + 5 external platforms."
+attributes = ["role:fleet"]
+
+contains = [
+  "astrolabe",
+  "x240",
+  "tuf",
+  "rpi",
+  "wsl",
+  "live-iso",
+  "actor-gha-ci",
+  "actor-agent-bot",
+  "ext-cloudflare-r2",
+  "ext-hbox",
+  "ext-tailscale",
+  "ext-github",
+  "ext-codeberg",
+]

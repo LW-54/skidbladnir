@@ -1,0 +1,12 @@
+id = "ext-cloudflare-r2"
+description = "External platform stub: Cloudflare R2 zero-egress CDN (`cache.adje.app`) & 14d Governance WORM backup bucket."
+attributes = ["role:external-platform"]
+
+[offer."ext:service".r2-cdn]
+tags = ["cdn-read", "zero-egress"]
+url = "https://cache.adje.app"
+
+[offer."ext:service".r2-worm]
+tags = ["offhost-backup", "worm-14d"]
+bucket = "skidbladnir-backups"
+lock_days = 14

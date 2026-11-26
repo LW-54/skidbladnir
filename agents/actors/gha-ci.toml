@@ -1,0 +1,10 @@
+id = "actor-gha-ci"
+description = "First-class CI runner Agent (ADR-0013 U-SplitGHA): OIDC niks3-upload ONLY, forbidden from prod vault/auth secrets."
+attributes = ["auth:principal", "actor:ci-oidc", "role:ci"]
+
+[use."ext:service"."ci:oidc"]
+selector = "ci-oidc"
+
+[use."mesh:service".niks3-upload]
+tags = ["zone:mesh", "niks3-upload"]
+selector = "niks3-upload"

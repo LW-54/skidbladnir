@@ -1,0 +1,25 @@
+id = "wsl"
+description = "Diskless NixOS-WSL workstation Superagent (target-nixos-wsl + fs-simple-disk)."
+attributes = ["auth:principal", "role:workstation", "role:mesh-member", "posture:roaming", "env:dev"]
+contains = [
+  "target-nixos-wsl",
+  "fs-simple-disk",
+  "trust-sops",
+  "mesh-tailscale",
+  "obs-fluent-node",
+  "git",
+]
+
+[internal.offer]
+ram = 4096
+
+[internal.offer."config:hostname"]
+value = "wsl"
+
+[use."ext:service"."mesh:control"]
+tags = ["mesh-control"]
+selector = "mesh-control"
+
+[use."mesh:service".obs-ingest]
+tags = ["zone:mesh", "obs-ingest"]
+selector = "obs-ingest"
