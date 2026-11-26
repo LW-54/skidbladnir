@@ -96,11 +96,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1795716291,
-        "narHash": "sha256-cmoMUjgCqHELi/t0K6Jn6vtVES2pVcdCDKWgRxHRL5c=",
+        "lastModified": 1795717638,
+        "narHash": "sha256-GFrWnFeLGocf/etza4pkJH9bNOfx3M3EDPIzoZbpBko=",
         "owner": "LW-54",
         "repo": "ivaldi",
-        "rev": "c0d22ffe617fad65e0cc2bdac0dfb412f6dedd87",
+        "rev": "9066a24d9e4283a2c760a194461dc9b8ae63eefa",
         "type": "github"
       },
       "original": {
